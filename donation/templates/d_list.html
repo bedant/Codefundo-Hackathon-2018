@@ -1,0 +1,12 @@
+{% extends 'donationbase.html' %}
+{% block content %}
+
+<div align="center" class="dlist">
+<p><h1 style="font-size:3vw">List of donors:</h1>
+{% for i in Donators %}
+      
+      <big style="font-family:monotype corsiva;cursive;font-size:2vw"> {{i.name}}</big>
+      <br>
+    {% endfor %}
+	</div>
+{% endblock %}

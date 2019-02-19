@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Donation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<style>
+	
+body{
+	
+		{% load staticfiles %}
+       text-align:center;
+		//background-image:url('cloud.jpg');
+		//background: url('nature.jpg') no-repeat center center fixed;
+		background: url( "{% static 'img/nature.jpg' %}") no-repeat center center fixed;
+		
+		background-size: cover;
+		height: 100%;
+		overflow: hidden;
+    
+	   }
+
+
+
+.button5{
+background-color:rgba(36, 194, 5,1);
+height :5vw;
+width:9vw;
+border-radius:10%;
+font-size:1.7vw;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(146, 215, 58,1);
+}
+
+li {
+    float: left;
+    border-right:0.1vw solid rgba(0,0,0,1);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.1vw 1.15vw;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(5, 164, 53,1);
+	color:black;
+}
+
+
+
+.container {
+    position: relative;
+	left:-40vw;
+	top:3vw;
+    width:20vw;
+}
+
+.container .btn {
+    position: relative;
+    top: 5vw;
+    left: 7vw;
+    transform: translate(-7vw, -9.5vw);
+    -ms-transform: translate(-10vw, -10vw);
+    background-color: #FC4A02;
+    color: white;
+    font-size: 2.5vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 1vw;
+    text-align: center;
+}
+
+.container .btn:hover {
+    background-color: green;
+}
+
+.container1 {
+    position: relative;
+	left:10vw;
+	top:-20vw;
+    width: 75vw;
+	height:auto;
+}
+
+.container1 .btn1 {
+    position: absolute;
+      top:-3.5vw;
+	  left:5vw;
+    transform: translate(-10vw, 25vw);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(74, 83, 63,1);
+    color: white;
+    font-size: 2vw;
+    //padding: 1vw 2vw;
+    border: none;
+	width:8.5vw;
+    cursor: pointer;
+    border-radius: 1vw;
+    text-align: center;
+}
+.container1 .btn1:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+.container2 {
+    position: relative;
+	left:10vw;
+	top:-20vw;
+    width: 75vw;
+	height:auto;
+}
+
+.container2 .btn2 {
+    position: absolute;
+     top:-3.5vw;
+	  left:5vw;
+    transform: translate(-10vw, 25vw);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(74, 83, 63,1);
+    color: white;
+    font-size: 2vw;
+    border: none;
+	width:8.5vw;
+    cursor: pointer;
+    border-radius: 1vw;
+    text-align: center;
+}
+.container2 .btn2:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+.container3 {
+    position: relative;
+	left:10vw;
+	top:-20vw;
+    width: 75vw;
+	height:auto;
+}
+
+.container3 .btn3 {
+    position: absolute;
+      top:-3.5vw;
+	  left:5vw;
+    transform: translate(-10vw, 25vw);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(74, 83, 63,1);
+    color: white;
+    font-size: 2vw;
+    border: none;
+	width:8.5vw;
+    cursor: pointer;
+    border-radius: 1vw;
+    text-align: center;
+}
+.container3 .btn3:hover {
+ background-color: rgba(0,0,0,1);
+}
+
+#texa{
+		//display: inline-block;
+			position: relative;
+			left: -13vw;
+			top: -30vw;
+			//color:(255, 100, 0 );
+		
+		font-size:2vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:50%;
+		width:20vw;
+		height:auto;
+		padding:1vw 1vw;
+		//margin:auto;
+		background-color:rgba(168, 240, 75,.6);
+		text-align: center;
+		}
+		
+#texa1{
+		//display: inline-block;
+			position: relative;
+			left: 12vw;
+			top: -49vw;
+			//color:(255, 100, 0 );
+		
+		font-size:2vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:50%;
+		width:20vw;
+		height:auto;
+		padding:1vw 1vw;
+		//margin:auto;
+		background-color:rgba(168, 240, 75,.6);
+		text-align: center;
+		}
+		
+#texa2{
+		//display: inline-block;
+			position: relative;
+			left: 37vw;
+			top: -68vw;
+			//color:(255, 100, 0 );
+		
+		font-size:2vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:50%;
+		width:20vw;
+		height:auto;
+		padding:1vw 1vw;
+		//margin:auto;
+		background-color:rgba(168, 240, 75,.6);
+		text-align: center;
+		}
+</style>
+
+</head>
+<body>
+            <!-- Menu Items -->
+            <div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+			
+    <div class="container">
+         <img src="{% static 'img/help.jpg' %}" style="width:100%">
+         <a href="{% url 'bankportal' %}" style="color:white"><button class="btn">Donate</button></a>
+	</div>
+		
+    <div id="texa" style="color:black" class="container-fluid"">
+	     <br>
+		 The list of 
+		 <br>
+		 people who made
+		 <br>
+		 donations
+		 <br><br><br>
+	     <div class="container1">
+         <a href="{% url 'donatorlist' %}" style="color:white" ><button class="btn1">Donator's List</button></a>
+	     </div>
+			
+	
+</body>
+</html>

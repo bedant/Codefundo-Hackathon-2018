@@ -1,0 +1,97 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Forums{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	
+	<style>
+	
+	ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(230, 230, 230,1);
+}
+
+li {
+    float: left;
+    border-right:0.1vw solid rgba(170,170,170);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 1.1vw 1.15vw;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(50, 50, 50,1);
+	color:white;
+}
+
+
+  </style>
+	
+  </head>
+  <body>
+
+	<div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+  
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Forums</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        {% block breadcrumb %}
+        {% endblock %}
+      </ol>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

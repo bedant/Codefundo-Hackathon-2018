@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="portfolio_style.css">
+    
+	 <style>
+	 {% load staticfiles %}
+	         body{
+                     text-align:center;
+		             //background-image:url('scenic.jpg');
+		             background: url( "{% static 'img/contacts.jpg' %}") no-repeat center center fixed;
+		             background-size: cover;
+		             height: 100%;
+		             overflow: auto;
+    
+	             }
+				 
+			 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 102, 102,1);
+}
+
+li {
+    float: left;
+    border-right:0.1vw solid rgba(0,0,0,1);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.1vw 1.15vw;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: rgba(0, 0, 0,1);
+	color:white;
+}
+
+
+
+					 
+			#texc{
+			color:rgb(144, 164, 174  );
+		    //display: inline-block;
+		    max-height: 90%;
+			position: absolute;
+			
+			left:45%;
+			top: 15%;
+			//color:rgb(255, 83, 69);
+		font-size:2vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:5%;
+		width:50%;
+		padding:5% 5%;
+		//margin:auto;
+		background-color:rgba(51, 102, 102,.75);
+		
+		}
+		
+		#fb{
+		         //border:1% solid blue;
+		         padding:1% 1%;
+	        }
+         
+		 #linkedin{
+		         //border:1% solid blue;
+		         padding:1% 1%;
+	        }
+		 
+		 img.sicons{
+		height:8%;
+		width:8%;
+	}
+			
+			
+	 </style>
+	
+</head>
+
+<body>
+     <div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+			
+     <div id="texc">
+         Our office is at:
+		 <br>
+		 Example Office<br>
+		 Example Street<br>
+		 Example Sector<br>
+		 City<br><br><br>
+		 
+		 
+		 You can mail us at:<br>
+		example@abc.com<br><br>
+		
+		Connect with us at : 		
+
+<br>		 
+<a href="https://www.facebook.com/" target="_blank"><img src="{% static 'img/FB.png' %}" id="fb" class="sicons"></a>
+<a href="https://www.linkedin.com/" target="_blank"><img src="{% static 'img/linkedin.png' %}"" id="linkedin" class="sicons"></a>
+</div>
+
+
+
+</body>
+</html>

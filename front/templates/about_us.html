@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="portfolio_style.css">
+
+	<style>
+	
+body{
+{% load staticfiles %}
+       text-align:center;
+		//background-image:url('scenic.jpg');
+		//background: url('about.jpg') no-repeat center center fixed;
+		background: url( "{% static 'img/about.jpg' %}") no-repeat center center fixed;
+		background-size: cover;
+		height: 100%;
+		overflow: hidden;
+    
+	   }
+
+#texa{
+		//display: inline-block;
+			position: relative;
+			left: 2.5%;
+			top: 15%;
+			//color:(255, 100, 0 );
+		font-size:3vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:5%;
+		width:55%;
+		height:auto;
+		padding:2% 10%;
+		//margin:auto;
+		background-color:rgba(196, 145, 8 ,.82);
+		
+		}
+	   
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(196, 145, 8,1);
+}
+
+li {
+    float: left;
+    border-right:0.1vw solid rgba(0,0,0,1);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 1.1vw 1.15vw;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(3, 3, 3,1);
+	color:rgb(196, 145, 8 );
+}
+
+
+
+
+	</style>
+	
+</head>
+	
+<body>
+     
+	 <div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+			<br>
+			<div id="texa" style="color:black" class="container-fluid">
+			We provide a central place for victims of the disaster and volunteers. Victims can make help requests and volunteers can make donations to help the victims.
+			The help requests and donations are managed by our admins.
+			
+			
+			
+			<br><br>
+			
+		</div>	
+			
+</body>
+
+</html>

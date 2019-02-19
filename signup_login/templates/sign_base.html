@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign in/Sin up</title>
+	<style>
+	body{
+	{% load staticfiles %}
+	background-image: url( "{% static 'img/basebg.jpeg' %}");
+	height: 100%; 
+	 background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	font-family: "Times New Roman", Times, serif;
+	}
+	
+	ul {
+                     list-style-type: none;
+                     margin: 0;
+                     padding: 0;
+                     overflow: hidden;
+                     background-color: #333;
+                 }
+
+             li {
+                     float: left;
+                     border-right:1px solid #bbb;
+                }
+
+             li:last-child {
+                                 border-right: none;
+                           }
+
+             li a {
+                     display: block;
+                     color: white;
+                     text-align: center;
+                     padding: 14px 16px;
+                     text-decoration: none;
+                  }
+
+             li a:hover {
+                                         background-color: #111;
+                                     }
+             
+					 
+	
+	div.signup{
+		//display: inline-block;
+		//max-height: 18%;
+			position: relative;
+			left: 15%;
+			//top: 50%;
+			//color:rgb(21, 67, 96);
+		//border:0px solid tomato;
+		border-radius:5%;
+		width:40%;
+		padding:7% 10%;
+		//margin:auto;
+		background-color:rgba(220, 255, 220 ,.55);
+		}
+	div.login{
+		//display: inline-block;
+		//max-height: 18%;
+			position: relative;
+			left: 15%;
+			//top: 50%;
+			//color:rgb(21, 67, 96);
+		//border:0px solid tomato;
+		border-radius:5%;
+		width:40%;
+		padding:7% 10%;
+		//margin:auto;
+		background-color:rgba(220, 255, 220 ,.55);
+		}
+	</style>
+  </head>
+  <body>
+       
+	   <div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+	   
+   <!-- <header style="background-color:rgba(25, 23, 27,1)">
+      <h1 style="color:rgb(25, 172, 4)"><strong><big>My Site</big></strong></h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" style="color:rgb(25, 172, 4)"><strong>Logout</strong></a>
+      {% else %}
+        <a href="{% url 'login' %}" style="color:rgb(25, 172, 4)"><strong>Login</strong></a> / <a href="{% url 'signup' %}" style="color:rgb(25, 172, 4)"><strong>Sign up</strong></a>
+      {% endif %}
+      <hr>
+    </header>-->
+	<br><br><br>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>

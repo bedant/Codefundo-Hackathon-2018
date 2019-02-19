@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Request for Help</li>
+{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'new_help_request' %}" class="btn btn-primary">Request</a>
+  </div>
+{% endblock %}

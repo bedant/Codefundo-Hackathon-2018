@@ -1,0 +1,32 @@
+{% extends 'sign_base.html' %}
+
+{% block content %}
+<div class="login">
+  <h2 style="color:rgb(4, 28, 1)" >Log in to My Site</h2>
+  <br><br>
+  {% if form.errors %}
+    <p style="color: red">Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}" />
+	
+    {% for field in form %}
+      <p><strong><big>
+        {{ field.label_tag }}<br>
+        {{ field }}</big></strong><br>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        {% if field.help_text %}
+          <p><small style="color: grey">{{ field.help_text }}</small></p>
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button type="submit" style="font-size:15px"><strong>Login<strong></button>
+	<br><br>
+    <a href="{% url 'signup' %}" style="color:rgb(4, 28, 1)">New to My Site? Sign up</a>
+  </form>
+  </div>
+{% endblock %}

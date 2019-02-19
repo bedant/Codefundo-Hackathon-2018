@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<style>
+	
+body{
+	
+		{% load staticfiles %}
+       text-align:center;
+		//background-image:url('cloud.jpg');
+		//background: url('nature.jpg') no-repeat center center fixed;
+		background: url( "{% static 'img/nature.jpg' %}") no-repeat center center fixed;
+		
+		background-size: cover;
+		height: 100%;
+		overflow: hidden;
+    
+	   }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(146, 215, 58,1);
+}
+
+li {
+    float: left;
+    border-right:0.1vw solid rgba(0,0,0,1);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.1vw 1.15vw;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(5, 164, 53,1);
+	color:black;
+}
+
+#texa{
+		//display: inline-block;
+			position: relative;
+			left: 0vw;
+			top: 5vw;
+			//color:(255, 100, 0 );
+		
+		font-size:2vw;
+		font-family:"monotype corsiva",cursive;
+		//border:0px solid tomato;
+		border-radius:5%;
+		width:40vw;
+		height:auto;
+		padding:1vw 1vw;
+		//margin:auto;
+		background-color:rgba(168, 240, 75,.6);
+		text-align: center;
+		}
+		
+</style>
+
+</head>
+<body>
+            <!-- Menu Items -->
+           <div>
+                <ul >
+                    <li><a href="{% url 'home' %}" class="active">Home</button></a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</button></a></li>
+                    <li><a href="{% url 'donationbig' %}">Donation</button></a></li>
+					<li><a href="{% url 'forumhome' %}">Forum</button></a></li>
+					
+					<li><a href="{% url 'contact_us' %}">Contact</button></a></li>
+
+
+					{% if user.is_authenticated %}
+					
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'logout' %}">Logout</button></a>
+					 </li>
+					 
+					{% else %}
+					<li style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'signup' %}">Sign Up</button></a>
+                </li>
+				
+				<li  style="float:right" > 
+
+                     <!-- data-toggle lets you display modal without any JavaScript -->
+                     <a href="{% url 'login' %}">Sign In</button></a>
+                </li>
+				{% endif %}
+            </li>
+        </ul>
+    </div>
+		
+    <div id="texa" style="color:black" class="container-fluid"">
+	     This page will redirect to bank payment system
+		 
+	</div>
+	
+</body>
+</html>
